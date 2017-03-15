@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+function car(gas, mpg) {
+this.gas = gas;
+if (this.gas <= 0){this.empty = true;}
+
+this.drive = function (miles) {
+this.gas -= miles/this.mpg;
+if(this.gas <=0) {
+this.empty = true;
+}
+};
+
+this.fill = function (gallons){
+};
+
+}
+
+ 
+
+//test code
+
+var test = new car(15, 30);
+alert (test.empty); //expected output = false
+test.drive(500);
+alert (test.empty); //expected output = true
+test.fill(20);
+alert (test.empty); //expected output = false
+
+</script>
+
+</body>
+</html>
