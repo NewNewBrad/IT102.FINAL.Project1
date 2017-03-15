@@ -21,7 +21,7 @@ Your job is to supply the missing properties and methods. Here are some notes to
 
 Test code is included below. After you have finished the object prototype, run the script including the test code and verify that the test code runs as expected. Then submit your finished prototype and test code to the dropbox. 
 
- <!--
+ 
 
 ------------------------------------- Partially Complete Script ------------------------------
 
@@ -63,5 +63,3 @@ alert (test.empty); //expected output = false
 
 </body>
 </html>
-
--->
