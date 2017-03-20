@@ -5,22 +5,37 @@
 <p id="demo"></p>
 
 <script>
-function car(gas, mpg, range, empty) {
-	this.gas = gas;
-		if (this.gas <= 0){this.empty = true;}
-		else {this.empty = false}
-	this.mpg = mpg;
-	this.range = (gas * mpg;)
+	function car(gas, mpg) {
+		var empty = this.empty
+		this.empty = false; // Assume the car starts with gas
+//console.log(empty)
+		if (this.gas <= 0){this.empty = true;} // Immediatly check empty
+		this.gas = gas;
+//console.log(gas);		
+		this.mpg = mpg;
+//console.log(mpg);	
+		var range = gas*mpg;
+		this.range = range; // Setting the range
+//console.log(this.range);
 
 	this.drive = function (miles) {
 		this.gas -= miles/this.mpg;
-		if(this.gas <=0) {this.empty = true;}
-	};
+//console.log(this.gas);
+		if(this.gas <= 0){this.empty = true;}
+		if(this.gas <= 0){this.gas = 0;} //Prevents negative gas values
+//console.log(this.gas)
+//console.log(this.empty);
+		};
 
-	this.fill = function (gallons){
-		this.gas += gallons;}
+		this.fill = function (gallons) {
+			this.gallons = gallons;
+			this.gas += this.gallons; // Adds gallons to the gas tank
+			if(this.gas > 0){this.empty = false;}// Resets empty on fill()
+//console.log(this.gas); 
+//console.log(this.empty);
+		};
 
-}
+	}
 
  
 
@@ -32,7 +47,7 @@ test.drive(500);
 alert (test.empty); //expected output = true
 test.fill(20);
 alert (test.empty); //expected output = false
-
+console.log(test)
 </script>
 
 </body>
