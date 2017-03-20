@@ -5,19 +5,20 @@
 <p id="demo"></p>
 
 <script>
-function car(gas, mpg) {
-this.gas = gas;
-if (this.gas <= 0){this.empty = true;}
+function car(gas, mpg, range, empty) {
+	this.gas = gas;
+		if (this.gas <= 0){this.empty = true;}
+		else {this.empty = false}
+	this.mpg = mpg;
+	this.range = (gas * mpg;)
 
-this.drive = function (miles) {
-this.gas -= miles/this.mpg;
-if(this.gas <=0) {
-this.empty = true;
-}
-};
+	this.drive = function (miles) {
+		this.gas -= miles/this.mpg;
+		if(this.gas <=0) {this.empty = true;}
+	};
 
-this.fill = function (gallons){
-};
+	this.fill = function (gallons){
+		this.gas += gallons;}
 
 }
 
